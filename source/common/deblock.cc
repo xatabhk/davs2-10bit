@@ -568,6 +568,11 @@ void davs2_deblock_init(uint32_t cpuid, ao_funcs_t* fh)
         fh->deblock_luma  [1] = deblock_edge_hor_sse128;
         fh->deblock_chroma[0] = deblock_edge_ver_c_sse128;
         fh->deblock_chroma[1] = deblock_edge_hor_c_sse128;
+#else
+        fh->deblock_luma[0] = deblock_edge_ver_sse128_10bit;
+        fh->deblock_luma[1] = deblock_edge_hor_sse128_10bit;
+        fh->deblock_chroma[0] = deblock_edge_ver_c_sse128_10bit;
+        fh->deblock_chroma[1] = deblock_edge_hor_c_sse128_10bit;
 #endif
     }
     if ((cpuid & DAVS2_CPU_AVX2) && !HDR_CHROMA_DELTA_QP) {
