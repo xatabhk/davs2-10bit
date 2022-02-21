@@ -392,14 +392,27 @@ void idct_64x16_quad_avx2(const coeff_t *src, coeff_t *dst, int i_dst);
  */
 #define SAO_on_block_bo_sse128 FPFX(SAO_on_block_bo_sse128)
 void SAO_on_block_bo_sse128    (pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const sao_param_t *sao_param);
+#define SAO_on_block_bo_sse128_10bit FPFX(SAO_on_block_bo_sse128_10bit)
+void SAO_on_block_bo_sse128_10bit(pel_t* dst, int i_dst, const pel_t* src, int i_src, int i_block_w, int i_block_h, int bit_depth, const sao_param_t* saoBlkParam);
 #define SAO_on_block_eo_0_sse128 FPFX(SAO_on_block_eo_0_sse128)
 void SAO_on_block_eo_0_sse128  (pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int *lcu_avail, const int *sao_offset);
+#define SAO_on_block_eo_0_sse128_10bit FPFX(SAO_on_block_eo_0_sse128_10bit)
+void SAO_on_block_eo_0_sse128_10bit(pel_t* dst, int i_dst, const pel_t* src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int* lcu_avail, const int* sao_offset);
 #define SAO_on_block_eo_45_sse128 FPFX(SAO_on_block_eo_45_sse128)
 void SAO_on_block_eo_45_sse128 (pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int *lcu_avail, const int *sao_offset);
+
+#define SAO_on_block_eo_45_sse128_10bit FPFX(SAO_on_block_eo_45_sse128_10bit)
+void SAO_on_block_eo_45_sse128_10bit(pel_t* dst, int i_dst, const pel_t* src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int* lcu_avail, const int* sao_offset);
+
 #define SAO_on_block_eo_90_sse128 FPFX(SAO_on_block_eo_90_sse128)
 void SAO_on_block_eo_90_sse128 (pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int *lcu_avail, const int *sao_offset);
+#define SAO_on_block_eo_90_sse128_10bit FPFX(SAO_on_block_eo_90_sse128_10bit)
+void SAO_on_block_eo_90_sse128_10bit(pel_t* dst, int i_dst, const pel_t* src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int* lcu_avail, const int* sao_offset);
 #define SAO_on_block_eo_135_sse128 FPFX(SAO_on_block_eo_135_sse128)
 void SAO_on_block_eo_135_sse128(pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int *lcu_avail, const int *sao_offset);
+#define SAO_on_block_eo_135_sse128_10bit FPFX(SAO_on_block_eo_135_sse128_10bit)
+void SAO_on_block_eo_135_sse128_10bit(pel_t* dst, int i_dst, const pel_t* src, int i_src, int i_block_w, int i_block_h, int bit_depth, const int* lcu_avail, const int* sao_offset);
+//AVX
 #define SAO_on_block_bo_avx2 FPFX(SAO_on_block_bo_avx2)
 void SAO_on_block_bo_avx2    (pel_t *p_dst, int i_dst, const pel_t *p_src, int i_src, int i_block_w, int i_block_h, int bit_depth, const sao_param_t *sao_param);
 #define SAO_on_block_eo_0_avx2 FPFX(SAO_on_block_eo_0_avx2)

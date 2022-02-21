@@ -646,25 +646,39 @@ void davs2_sao_init(uint32_t cpuid, ao_funcs_t *fh)
 
     /* init asm function handles */
 #if HAVE_MMX
-#if !HIGH_BIT_DEPTH
     if (cpuid & DAVS2_CPU_SSE4) {
+#if !HIGH_BIT_DEPTH
         fh->sao_block_bo                   = SAO_on_block_bo_sse128;
         fh->sao_filter_eo[SAO_TYPE_EO_0]   = SAO_on_block_eo_0_sse128;
         fh->sao_filter_eo[SAO_TYPE_EO_45]  = SAO_on_block_eo_45_sse128;
         fh->sao_filter_eo[SAO_TYPE_EO_90]  = SAO_on_block_eo_90_sse128;
         fh->sao_filter_eo[SAO_TYPE_EO_135] = SAO_on_block_eo_135_sse128;
-    }
+#else
+        //10bit
+        fh->sao_block_bo = SAO_on_block_bo_sse128_10bit;
+        fh->sao_filter_eo[SAO_TYPE_EO_0] = SAO_on_block_eo_0_sse128_10bit;
+        fh->sao_filter_eo[SAO_TYPE_EO_45] = SAO_on_block_eo_45_sse128_10bit;
+        fh->sao_filter_eo[SAO_TYPE_EO_90] = SAO_on_block_eo_90_sse128_10bit;
+        fh->sao_filter_eo[SAO_TYPE_EO_135] = SAO_on_block_eo_135_sse128_10bit;
 #endif
+    }
 
-#if !HIGH_BIT_DEPTH
     if (cpuid & DAVS2_CPU_AVX2) {
+#if !HIGH_BIT_DEPTH
         fh->sao_block_bo                   = SAO_on_block_bo_avx2;
         fh->sao_filter_eo[SAO_TYPE_EO_0]   = SAO_on_block_eo_0_avx2;
         fh->sao_filter_eo[SAO_TYPE_EO_45]  = SAO_on_block_eo_45_avx2;
         fh->sao_filter_eo[SAO_TYPE_EO_90]  = SAO_on_block_eo_90_avx2;
         fh->sao_filter_eo[SAO_TYPE_EO_135] = SAO_on_block_eo_135_avx2;
-    }
+#else
+        //10bit
+        //fh->sao_block_bo = SAO_on_block_bo_avx2;
+        //fh->sao_filter_eo[SAO_TYPE_EO_0] = SAO_on_block_eo_0_avx2;
+        //fh->sao_filter_eo[SAO_TYPE_EO_45] = SAO_on_block_eo_45_avx2;
+        //fh->sao_filter_eo[SAO_TYPE_EO_90] = SAO_on_block_eo_90_avx2;
+        //fh->sao_filter_eo[SAO_TYPE_EO_135] = SAO_on_block_eo_135_avx2;
 #endif
+    }
 #endif
 }
 
