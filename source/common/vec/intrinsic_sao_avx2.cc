@@ -39,7 +39,7 @@
 #include "../common.h"
 #include "intrinsic.h"
 
-//#if !HIGH_BIT_DEPTH
+#if !HIGH_BIT_DEPTH
 #ifdef _MSC_VER
 #pragma warning(disable:4244)  // TODO: ÐÞÕý±àÒëwarning
 #endif
@@ -683,4 +683,4 @@ void SAO_on_block_bo_avx2(pel_t *p_dst, int i_dst,
         p_src += i_src;
     }
 }
-//#endif // !HIGH_BIT_DEPTH
+#endif // !HIGH_BIT_DEPTH

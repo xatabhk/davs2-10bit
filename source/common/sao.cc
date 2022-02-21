@@ -663,12 +663,14 @@ void davs2_sao_init(uint32_t cpuid, ao_funcs_t *fh)
 #endif
     }
 
-    if (cpuid & DAVS2_CPU_AVX) {
-        fh->sao_block_bo = SAO_on_block_bo_avx2;
-        fh->sao_filter_eo[SAO_TYPE_EO_0] = SAO_on_block_eo_0_avx2;
-        fh->sao_filter_eo[SAO_TYPE_EO_45] = SAO_on_block_eo_45_avx2;
-        fh->sao_filter_eo[SAO_TYPE_EO_90] = SAO_on_block_eo_90_avx2;
+    if (cpuid & DAVS2_CPU_AVX2) {
+#if !HIGH_BIT_DEPTH
+        fh->sao_block_bo                   = SAO_on_block_bo_avx2;
+        fh->sao_filter_eo[SAO_TYPE_EO_0]   = SAO_on_block_eo_0_avx2;
+        fh->sao_filter_eo[SAO_TYPE_EO_45]  = SAO_on_block_eo_45_avx2;
+        fh->sao_filter_eo[SAO_TYPE_EO_90]  = SAO_on_block_eo_90_avx2;
         fh->sao_filter_eo[SAO_TYPE_EO_135] = SAO_on_block_eo_135_avx2;
+#endif
     }
 
 #endif
