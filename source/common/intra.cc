@@ -2671,6 +2671,12 @@ void davs2_intra_pred_init(uint32_t cpuid, ao_funcs_t *pf)
         pf->fill_edge_f[1]      = fill_edge_samples_x_sse128;
         pf->fill_edge_f[2]      = fill_edge_samples_y_sse128;
         pf->fill_edge_f[3]      = fill_edge_samples_xy_sse128;
+#else
+        ipred[DC_PRED] = intra_pred_dc_sse128_10bit;
+        ipred[PLANE_PRED] = intra_pred_plane_sse128_10bit;
+        ipred[BI_PRED] = intra_pred_bilinear_sse128_10bit;
+        ipred[HOR_PRED] = intra_pred_hor_sse128_10bit;
+        ipred[VERT_PRED] = intra_pred_ver_sse128_10bit;
 #endif
     }
 

@@ -47,8 +47,8 @@ extern "C" {
 #define intrinsic_mask FPFX(intrinsic_mask)
 //ALIGN32(extern const int8_t  intrinsic_mask[15][16]);
 ALIGN32(extern const int32_t  intrinsic_mask[15][16]);
-//#define intrinsic_mask_256_8bit FPFX(intrinsic_mask_256_8bit)
-//ALIGN32(extern const int8_t  intrinsic_mask_256_8bit[16][32]);
+#define intrinsic_mask_256_8bit FPFX(intrinsic_mask_256_8bit)
+ALIGN32(extern const int8_t  intrinsic_mask_256_8bit[16][32]);
 #define intrinsic_mask32 FPFX(intrinsic_mask32)
 ALIGN32(extern const int8_t  intrinsic_mask32[32][32]);
 //#define intrinsic_mask_10bit FPFX(intrinsic_mask_10bit)
@@ -456,14 +456,26 @@ void fill_edge_samples_xy_sse128(const pel_t *pTL, int i_TL, const pel_t *pLcuEP
 
 #define intra_pred_dc_sse128 FPFX(intra_pred_dc_sse128)
 void intra_pred_dc_sse128       (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
+
+#define intra_pred_dc_sse128_10bit FPFX(intra_pred_dc_sse128_10bit)
+void intra_pred_dc_sse128_10bit(pel_t* src, pel_t* dst, int i_dst, int dir_mode, int bsx, int bsy);
+
 #define intra_pred_plane_sse128 FPFX(intra_pred_plane_sse128)
 void intra_pred_plane_sse128    (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
+#define intra_pred_plane_sse128_10bit FPFX(intra_pred_plane_sse128_10bit)
+void intra_pred_plane_sse128_10bit(pel_t* pSrc, pel_t* dst, int i_dst, int dir_mode, int iWidth, int iHeight);
 #define intra_pred_bilinear_sse128 FPFX(intra_pred_bilinear_sse128)
 void intra_pred_bilinear_sse128 (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
+#define intra_pred_bilinear_sse128_10bit FPFX(intra_pred_bilinear_sse128_10bit)
+void intra_pred_bilinear_sse128_10bit(pel_t* pSrc, pel_t* dst, int i_dst, int dir_mode, int iWidth, int iHeight);
 #define intra_pred_hor_sse128 FPFX(intra_pred_hor_sse128)
 void intra_pred_hor_sse128      (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
+#define intra_pred_hor_sse128_10bit FPFX(intra_pred_hor_sse128_10bit)
+void intra_pred_hor_sse128_10bit(pel_t* pSrc, pel_t* dst, int i_dst, int dir_mode, int iWidth, int iHeight);
 #define intra_pred_ver_sse128 FPFX(intra_pred_ver_sse128)
 void intra_pred_ver_sse128      (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
+#define intra_pred_ver_sse128_10bit FPFX(intra_pred_ver_sse128_10bit)
+void intra_pred_ver_sse128_10bit(pel_t* pSrc, pel_t* dst, int i_dst, int dir_mode, int iWidth, int iHeight);
 
 #define intra_pred_ang_x_3_sse128 FPFX(intra_pred_ang_x_3_sse128)
 void intra_pred_ang_x_3_sse128  (pel_t *src, pel_t *dst, int i_dst, int dir_mode, int bsx, int bsy);
