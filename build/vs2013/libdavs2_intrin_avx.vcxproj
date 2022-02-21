@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\common\vec\intrinsic_alf_avx.c" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_deblock_avx2.cc" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_idct_avx2.cc" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_inter_pred_avx2.cc" />
@@ -117,7 +118,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>HIGH_BIT_DEPTH=0;BIT_DEPTH=8;WIN32;ARCH_X86_64=1;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HIGH_BIT_DEPTH=1;BIT_DEPTH=10;WIN32;ARCH_X86_64=1;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\;..\..\source;..\..\pthread;$(CUDA_PATH)\include;$(AMD_APPSDK_PATH)\include;$(INTEL_OPENCL_SDK)\include;</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeaderFile />
@@ -162,7 +163,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>HIGH_BIT_DEPTH=0;BIT_DEPTH=8;WIN32;ARCH_X86_64=1;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HIGH_BIT_DEPTH=1;BIT_DEPTH=10;WIN32;ARCH_X86_64=1;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\;..\..\source;..\..\pthread;$(CUDA_PATH)\include;$(AMD_APPSDK_PATH)\include;$(INTEL_OPENCL_SDK)\include;</AdditionalIncludeDirectories>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>

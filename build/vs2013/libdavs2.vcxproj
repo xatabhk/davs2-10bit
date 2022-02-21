@@ -168,7 +168,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>DAVS2_EXPORTS;HIGH_BIT_DEPTH=0;BIT_DEPTH=8;WIN32;ARCH_X86_64=1;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DAVS2_EXPORTS;HIGH_BIT_DEPTH=1;BIT_DEPTH=10;WIN32;ARCH_X86_64=1;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\;..\..\source;..\..\pthread;$(CUDA_PATH)\include;$(AMD_APPSDK_PATH)\include;$(INTEL_OPENCL_SDK)\include;</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
@@ -181,8 +181,10 @@
       <AdditionalDependencies>libdavs2_asm.lib;libdavs2_intrin_sse.lib;libdavs2_intrin_avx.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd /d "$(SolutionDir)..\.." &amp;&amp; sh version.sh</Command>
-      <Message>UpdateSourceVersionInfo</Message>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -221,12 +223,13 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>DAVS2_EXPORTS;HIGH_BIT_DEPTH=0;BIT_DEPTH=8;WIN32;ARCH_X86_64=1;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DAVS2_EXPORTS;HIGH_BIT_DEPTH=1;BIT_DEPTH=10;WIN32;ARCH_X86_64=1;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\;..\..\source;..\..\pthread;$(CUDA_PATH)\include;$(AMD_APPSDK_PATH)\include;$(INTEL_OPENCL_SDK)\include;</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -237,8 +240,10 @@
       <AdditionalDependencies>libdavs2_asm.lib;libdavs2_intrin_sse.lib;libdavs2_intrin_avx.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>cd /d "$(SolutionDir)..\.." &amp;&amp; sh version.sh</Command>
-      <Message>UpdateSourceVersionInfo</Message>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
