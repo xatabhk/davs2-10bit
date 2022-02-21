@@ -179,6 +179,7 @@ extern "C" {
 /* align a pointer */
 #  define CACHE_LINE_SIZE       32    /* for x86-64 and x86 */
 #  define ALIGN_POINTER(p)      (p) = (uint8_t *)((intptr_t)((p) + (CACHE_LINE_SIZE - 1)) & (~(intptr_t)(CACHE_LINE_SIZE - 1)))
+#  define ALIGN_PIXEL_POINTER(p)      (p) = (pel_t *)((intptr_t)((p) + (CACHE_LINE_SIZE - 1)) & (~(intptr_t)(CACHE_LINE_SIZE - 1)))
 #  define CACHE_LINE_256B       32    /* for x86-64 and x86 */
 #  define ALIGN_256_PTR(p)      (p) = (uint8_t *)((intptr_t)((p) + (CACHE_LINE_256B - 1)) & (~(intptr_t)(CACHE_LINE_256B - 1)))
 

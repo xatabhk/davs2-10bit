@@ -961,9 +961,9 @@ void davs2_write_a_frame(davs2_picture_t *pic, davs2_frame_t *frame)
     if (!shift1 && sizeof(pel_t) == num_bytes_per_sample) {
         pic->dec_frame = frame;
         // TODO: 如下赋值前的指针需要在适当的时候（进入后续分支时）恢复
-        pic->planes[0]  = frame->planes[0];
-        pic->planes[1]  = frame->planes[1];
-        pic->planes[2]  = frame->planes[2];
+        pic->planes[0]  = (uint8_t*)frame->planes[0];
+        pic->planes[1]  = (uint8_t*)frame->planes[1];
+        pic->planes[2]  = (uint8_t*)frame->planes[2];
         pic->strides[0] = frame->i_stride[0] * num_bytes_per_sample;
         pic->strides[1] = frame->i_stride[1] * num_bytes_per_sample;
         pic->strides[2] = frame->i_stride[2] * num_bytes_per_sample;

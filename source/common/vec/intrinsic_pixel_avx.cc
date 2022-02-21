@@ -230,7 +230,8 @@ void add_pel_clip_sse256(const pel_t *src1, int i_src1, const coeff_t *src2, int
     __m256i max_val = _mm256_set1_epi16((short)(max_pel_value));
 
     if (width & 15) {
-        __m256i mask = _mm256_loadu_si256((const __m256i *)intrinsic_mask_10bit[(width & 15) - 1]);
+        //__m256i mask = _mm256_loadu_si256((const __m256i *)intrinsic_mask_10bit[(width & 15) - 1]);
+        __m256i mask = _mm256_loadu_si256((const __m256i*)intrinsic_mask[(width & 15) - 1]);
 
         while (height--) {
             for (j = 0; j < width - 15; j += 16) {
@@ -271,7 +272,8 @@ void davs2_pixel_average_avx(pel_t *dst, int i_dst, const pel_t *src1, int i_src
     int j;
 
     if (width & 15) {
-        __m256i mask = _mm256_loadu_si256((const __m256i *)intrinsic_mask_10bit[(width & 15) - 1]);
+        //__m256i mask = _mm256_loadu_si256((const __m256i *)intrinsic_mask_10bit[(width & 15) - 1]);
+        __m256i mask = _mm256_loadu_si256((const __m256i*)intrinsic_mask[(width & 15) - 1]);
 
         while (height--) {
             __m256i D;

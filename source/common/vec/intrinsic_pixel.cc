@@ -47,7 +47,8 @@ void avs_pixel_average_sse128(pel_t *dst, int i_dst, const pel_t *src0, int i_sr
     __m128i D;
 
     if (width & 7) {
-        __m128i mask = _mm_load_si128((const __m128i *)intrinsic_mask_10bit[(width & 7) - 1]);
+        //__m128i mask = _mm_load_si128((const __m128i *)intrinsic_mask_10bit[(width & 7) - 1]);
+        __m128i mask = _mm_load_si128((const __m128i*)intrinsic_mask[(width & 7) - 1]);
 
         while (height--) {
             for (j = 0; j < width - 7; j += 8) {

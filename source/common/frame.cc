@@ -288,9 +288,9 @@ davs2_frame_t *davs2_frame_new(int width, int height, int chroma_format, uint8_t
     frame->planes[0] += frame->i_stride[0] * (AVS2_PAD    ) + (AVS2_PAD    );
     frame->planes[1] += frame->i_stride[1] * (AVS2_PAD / 2) + (AVS2_PAD / 2);
     frame->planes[2] += frame->i_stride[2] * (AVS2_PAD / 2) + (AVS2_PAD / 2);
-    ALIGN_POINTER(frame->planes[0]);
-    ALIGN_POINTER(frame->planes[1]);
-    ALIGN_POINTER(frame->planes[2]);
+    ALIGN_PIXEL_POINTER(frame->planes[0]);
+    ALIGN_PIXEL_POINTER(frame->planes[1]);
+    ALIGN_PIXEL_POINTER(frame->planes[2]);
 
     if (b_extra) {
         /* M2, reference index buffer (in SPU) */
