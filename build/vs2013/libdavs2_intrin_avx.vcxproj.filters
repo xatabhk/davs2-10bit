@@ -25,7 +25,7 @@
     <ClCompile Include="..\..\source\common\vec\intrinsic_pixel_avx.cc">
       <Filter>vec</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\common\vec\intrinsic_alf_avx.c">
+    <ClCompile Include="..\..\source\common\vec\intrinsic_alf_avx2.c">
       <Filter>vec</Filter>
     </ClCompile>
   </ItemGroup>
