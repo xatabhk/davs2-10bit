@@ -437,8 +437,8 @@ void alf_filter_block_sse128_10bit(pel_t* p_dst, const pel_t* p_src, int stride,
     int lcu_pix_x, int lcu_pix_y, int lcu_width, int lcu_height,
     int* alf_coeff, int b_top_avail, int b_down_avail);
 
-#define alf_filter_block_avx_10bit FPFX(alf_filter_block_avx_10bit)
-void alf_filter_block_avx_10bit(pel_t* p_dst, const pel_t* p_src, int stride,
+#define alf_filter_block_avx2_10bit FPFX(alf_filter_block_avx2_10bit)
+void alf_filter_block_avx2_10bit(pel_t* p_dst, const pel_t* p_src, int stride,
     int lcu_pix_x, int lcu_pix_y, int lcu_width, int lcu_height,
     int* alf_coeff, int b_top_avail, int b_down_avail);
 
