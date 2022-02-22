@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\common\vec\intrinsic_alf_avx.c" />
+    <ClCompile Include="..\..\source\common\vec\intrinsic_alf_avx2.c" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_deblock_avx2.cc" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_idct_avx2.cc" />
     <ClCompile Include="..\..\source\common\vec\intrinsic_inter_pred_avx2.cc" />
@@ -124,7 +124,7 @@
       <PrecompiledHeaderFile />
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,6 +171,7 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <AdditionalOptions>/Qvec-report:1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
