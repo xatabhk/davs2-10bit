@@ -52,7 +52,7 @@ void alf_filter_block_avx2_10bit(pel_t* p_dst, const pel_t* p_src, int stride,
     int lcu_pix_x, int lcu_pix_y, int lcu_width, int lcu_height,
     int* alf_coeff, int b_top_avail, int b_down_avail)
 {
-    pel_t *imgPad1, *imgPad2, *imgPad3, *imgPad4, *imgPad5, *imgPad6;
+    const pel_t *imgPad1, *imgPad2, *imgPad3, *imgPad4, *imgPad5, *imgPad6;
 
     __m256i T00, T01, T10, T11, T20, T21, T30, T31, T40, T41;
     __m256i E00, E01, E10, E11, E20, E21, E30, E31, E40, E41;
